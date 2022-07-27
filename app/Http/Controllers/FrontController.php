@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Gallery;
 use App\Models\Image;
 use App\Models\Portfolio;
+use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 
@@ -25,7 +26,13 @@ class FrontController extends Controller
         $images = Image::where('gallery_id',$gallery->id)->get();
         return view('front.imagesgallery',compact('gallery','images'));
     }
-
+    public function allPosts(){
+        $posts = Post::all();
+        return view('front.blog',compact('posts'));
+    }
+    public function viewPost(Post $post){
+        return view('front.post',compact('post'));
+    }
 
 
 }

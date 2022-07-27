@@ -23,6 +23,8 @@ Route::get('/', [FrontController::class,'index'])->name('index');
 Route::get('/portfolio',[FrontController::class,'portfolio'])->name('portfolio');
 Route::get('/galeries',[FrontController::class,'galeries'])->name('galeries');
 Route::get('/galeries/{gallery}',[FrontController::class,'gallery'])->name('imagesgallery');
+Route::get('/posts',[FrontController::class,'allPosts'])->name('blog');
+Route::get('/posts/{post}',[FrontController::class,'viewPost'])->name('post');
 
 
 

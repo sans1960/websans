@@ -72,7 +72,7 @@
 
                       <a href="{{ route('galeries') }}" class="px-3 py-2 text-sm font-medium text-gray-300 rounded-md hover:bg-gray-700 hover:text-white">Galerias</a>
 
-                      <a href="" class="px-3 py-2 text-sm font-medium text-gray-300 rounded-md hover:bg-gray-700 hover:text-white">otri</a>
+                      <a href="{{ route('blog') }}" class="px-3 py-2 text-sm font-medium text-gray-300 rounded-md hover:bg-gray-700 hover:text-white">Blog</a>
                     </div>
                   </div>
                 </div>
@@ -112,7 +112,7 @@
 
                 <a href="{{ route('galeries') }}" class="block px-3 py-2 text-base font-medium text-gray-300 rounded-md hover:bg-gray-700 hover:text-white">Galerias</a>
 
-                <a href="" class="block px-3 py-2 text-base font-medium text-gray-300 rounded-md hover:bg-gray-700 hover:text-white">otri</a>
+                <a href="{{ route('blog') }}" class="block px-3 py-2 text-base font-medium text-gray-300 rounded-md hover:bg-gray-700 hover:text-white">Blog</a>
               </div>
             </div>
           </nav>
