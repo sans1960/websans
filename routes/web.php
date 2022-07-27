@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FrontController;
+use App\Http\Controllers\Admin\TagController;
 use App\Http\Controllers\Admin\ImageController;
 use App\Http\Controllers\Admin\GalleryController;
 use App\Http\Controllers\Admin\PortfolioController;
@@ -30,5 +31,6 @@ Route::get('/dashboard', function () {
 Route::resource('admin/portfolio',PortfolioController::class)->middleware('auth')->names('admin.portfolio');
 Route::resource('admin/galleries',GalleryController::class)->middleware('auth')->names('admin.galeries');
 Route::resource('admin/images',ImageController::class)->middleware('auth')->names('admin.images');
+Route::resource('admin/tags',TagController::class)->middleware('auth')->names('admin.tags');
 
 require __DIR__.'/auth.php';
