@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\Admin\TagController;
+use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\ImageController;
 use App\Http\Controllers\Admin\GalleryController;
 use App\Http\Controllers\Admin\PortfolioController;
@@ -32,5 +33,7 @@ Route::resource('admin/portfolio',PortfolioController::class)->middleware('auth'
 Route::resource('admin/galleries',GalleryController::class)->middleware('auth')->names('admin.galeries');
 Route::resource('admin/images',ImageController::class)->middleware('auth')->names('admin.images');
 Route::resource('admin/tags',TagController::class)->middleware('auth')->names('admin.tags');
+Route::resource('admin/posts',PostController::class)->middleware('auth')->names('admin.posts');
+
 
 require __DIR__.'/auth.php';

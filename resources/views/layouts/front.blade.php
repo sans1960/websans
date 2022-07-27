@@ -12,8 +12,34 @@
          @yield('css')
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+        <script language="JavaScript">
+            function mueveReloj(){
+                momentoActual = new Date()
+                hora = momentoActual.getHours()
+                minuto = momentoActual.getMinutes()
+                segundo = momentoActual.getSeconds()
+
+                str_segundo = new String (segundo)
+                if (str_segundo.length == 1)
+                   segundo = "0" + segundo
+
+                str_minuto = new String (minuto)
+                if (str_minuto.length == 1)
+                   minuto = "0" + minuto
+
+                str_hora = new String (hora)
+                if (str_hora.length == 1)
+                   hora = "0" + hora
+
+                horaImprimible = hora + " : " + minuto + " : " + segundo
+
+                document.form_reloj.reloj.value = horaImprimible
+
+                setTimeout("mueveReloj()",1000)
+            }
+            </script>
     </head>
-    <body class="font-sans antialiased flex flex-col justify-between">
+    <body class="font-sans antialiased flex flex-col justify-between" onload="mueveReloj()">
         <nav class="bg-gray-800" x-data="{open:false}">
             <div class="px-2 mx-auto max-w-7xl sm:px-6 lg:px-8">
               <div class="relative flex items-center justify-between h-16">
@@ -90,8 +116,11 @@
               </div>
             </div>
           </nav>
-          <div class="bg-blue-700 flex justify-between items-center">
-                   <p>{{ Illuminate\Support\Carbon::today() }}</p>
+          <div class="bg-blue-700 flex justify-between items-center p-2">
+                   <p class="ml-3 text-white"> {{ date('d-m-Y') }}</p>
+                   <form name="form_reloj">
+                    <input type="text" name="reloj" class="bg-blue-700 text-white border-none" size="10" onfocus="window.document.form_reloj.reloj.blur()">
+                    </form>
 
           </div>
           @yield('content')
