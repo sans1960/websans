@@ -6,6 +6,7 @@ use App\Models\Gallery;
 use App\Models\Image;
 use App\Models\Portfolio;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 
 class FrontController extends Controller
 {
@@ -24,4 +25,7 @@ class FrontController extends Controller
         $images = Image::where('gallery_id',$gallery->id)->get();
         return view('front.imagesgallery',compact('gallery','images'));
     }
+
+
+
 }

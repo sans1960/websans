@@ -22,6 +22,8 @@ Route::get('/portfolio',[FrontController::class,'portfolio'])->name('portfolio')
 Route::get('/galeries',[FrontController::class,'galeries'])->name('galeries');
 Route::get('/galeries/{gallery}',[FrontController::class,'gallery'])->name('imagesgallery');
 
+
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');

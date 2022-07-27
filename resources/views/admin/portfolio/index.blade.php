@@ -112,5 +112,8 @@
                 </div>
             </div>
         </div>
+        <div class="mt-6 mb-6">
+            {!! $portfolios->links() !!}
+        </div>
     </div>
 </x-app-layout>

@@ -13,7 +13,7 @@
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="font-sans antialiased">
+    <body class="font-sans antialiased flex flex-col justify-between">
         <nav class="bg-gray-800" x-data="{open:false}">
             <div class="px-2 mx-auto max-w-7xl sm:px-6 lg:px-8">
               <div class="relative flex items-center justify-between h-16">
@@ -46,7 +46,7 @@
 
                       <a href="{{ route('galeries') }}" class="px-3 py-2 text-sm font-medium text-gray-300 rounded-md hover:bg-gray-700 hover:text-white">Galerias</a>
 
-                      <a href="#" class="px-3 py-2 text-sm font-medium text-gray-300 rounded-md hover:bg-gray-700 hover:text-white">Calendar</a>
+                      <a href="" class="px-3 py-2 text-sm font-medium text-gray-300 rounded-md hover:bg-gray-700 hover:text-white">otri</a>
                     </div>
                   </div>
                 </div>
@@ -86,11 +86,27 @@
 
                 <a href="{{ route('galeries') }}" class="block px-3 py-2 text-base font-medium text-gray-300 rounded-md hover:bg-gray-700 hover:text-white">Galerias</a>
 
-                <a href="#" class="block px-3 py-2 text-base font-medium text-gray-300 rounded-md hover:bg-gray-700 hover:text-white">Calendar</a>
+                <a href="" class="block px-3 py-2 text-base font-medium text-gray-300 rounded-md hover:bg-gray-700 hover:text-white">otri</a>
               </div>
             </div>
           </nav>
+          <div class="bg-blue-700 flex justify-between items-center">
+                   <p>{{ Illuminate\Support\Carbon::today() }}</p>
+
+          </div>
           @yield('content')
+          <footer class="bg-gray-800 flex justify-around items-center p-3 mt-5">
+            <div class="flex justify-center">
+                <img src="{{ asset('img/SW.png') }}" alt="" class="w-8">
+            </div>
+            <div class="flex justify-center">
+                <img src="{{ asset('img/SW.png') }}" alt="" class="w-8">
+            </div>
+            <div class="flex justify-center">
+                <img src="{{ asset('img/SW.png') }}" alt="" class="w-8">
+            </div>
+
+          </footer>
           @yield('scripts')
     </body>
 </html>
