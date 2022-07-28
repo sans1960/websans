@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Location;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -40,7 +41,7 @@ class LocationController extends Controller
         $location = new Location();
         $location->latitud = $request->latitud;
         $location->longitud = $request->longitud;
-
+        $location->slug = Str::slug($request->name);
         $location->name = $request->name;
         $location->comments = $request->comments;
         $location->save();
@@ -64,9 +65,9 @@ class LocationController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Location $location)
     {
-        return view('admin.locations.edit');
+        return view('admin.locations.edit',compact('location'));
     }
 
     /**
@@ -76,9 +77,15 @@ class LocationController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Location $location)
     {
-        //
+        $location->latitud = $request->latitud;
+        $location->longitud = $request->longitud;
+        $location->slug = Str::slug($request->name);
+        $location->name = $request->name;
+        $location->comments = $request->comments;
+        $location->save();
+        return redirect()->route('admin.locations.index')->with('message','Location Updated') ;
     }
 
     /**
@@ -87,8 +94,9 @@ class LocationController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Location $location)
     {
-        //
+        $location->delete();
+        return redirect()->route('admin.locations.index')->with('message','Location Deleted');
     }
 }

@@ -8,5 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Location extends Model
 {
     use HasFactory;
-    protected $fillable = ['name','comments','latitud','longitud'];
+    protected $fillable = ['name','slug','comments','latitud','longitud'];
+    public function getRouteKeyName(){
+        return 'slug';
+    }
 }

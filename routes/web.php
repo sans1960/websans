@@ -26,6 +26,8 @@ Route::get('/galeries',[FrontController::class,'galeries'])->name('galeries');
 Route::get('/galeries/{gallery}',[FrontController::class,'gallery'])->name('imagesgallery');
 Route::get('/posts',[FrontController::class,'allPosts'])->name('blog');
 Route::get('/posts/{post}',[FrontController::class,'viewPost'])->name('post');
+Route::get('/locations',[FrontController::class,'allLocations'])->name('locations');
+Route::get('/locations/{location}',[FrontController::class,'viewLocation'])->name('viewlocation');
 
 
 

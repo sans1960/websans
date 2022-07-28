@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Gallery;
 use App\Models\Image;
+use App\Models\Location;
 use App\Models\Portfolio;
 use App\Models\Post;
 use Illuminate\Http\Request;
@@ -32,6 +33,14 @@ class FrontController extends Controller
     }
     public function viewPost(Post $post){
         return view('front.post',compact('post'));
+    }
+    public function allLocations(){
+        $locations = Location::all();
+        return view('front.alllocations',compact('locations'));
+    }
+    public function viewLocation(Location $location){
+
+        return view('front.location',compact('location'));
     }
 
 

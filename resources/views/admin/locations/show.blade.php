@@ -10,13 +10,16 @@
         </h2>
     </x-slot>
 
-    <div class="container max-w-6xl mx-auto mt-20">
+    <div class="container max-w-6xl mx-auto mt-20 mb-20">
         <h1>{{ $location->name }}</h1>
             <div id="map" style="width: 100%;height:400px;">
 
             </div>
 
     </div>
+    <footer class="p-5 flex justify-center">
+          <h1>Admin</h1>
+    </footer>
     @push('scripts')
     <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
     integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
