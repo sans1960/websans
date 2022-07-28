@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\TagController;
 use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\ImageController;
 use App\Http\Controllers\Admin\GalleryController;
+use App\Http\Controllers\Admin\LocationController;
 use App\Http\Controllers\Admin\PortfolioController;
 
 /*
@@ -36,6 +37,7 @@ Route::resource('admin/galleries',GalleryController::class)->middleware('auth')-
 Route::resource('admin/images',ImageController::class)->middleware('auth')->names('admin.images');
 Route::resource('admin/tags',TagController::class)->middleware('auth')->names('admin.tags');
 Route::resource('admin/posts',PostController::class)->middleware('auth')->names('admin.posts');
+Route::resource('admin/locations',LocationController::class)->middleware('auth')->names('admin.locations');
 
 
 require __DIR__.'/auth.php';
