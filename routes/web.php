@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FrontController;
+use App\Http\Controllers\MovieController;
 use App\Http\Controllers\Admin\TagController;
 use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\ImageController;
@@ -28,6 +29,7 @@ Route::get('/posts',[FrontController::class,'allPosts'])->name('blog');
 Route::get('/posts/{post}',[FrontController::class,'viewPost'])->name('post');
 Route::get('/locations',[FrontController::class,'allLocations'])->name('locations');
 Route::get('/locations/{location}',[FrontController::class,'viewLocation'])->name('viewlocation');
+Route::get('/movies',[MovieController::class,'index'])->name('movies');
 
 
 
